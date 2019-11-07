@@ -40,8 +40,8 @@ Agora descompactamos o pacote:<br>
 ``tar zfxv elasticsearch-7.4.2-linux-x86_64.tar.gz``
 
 Vamos fazer algumas edições no arquivo de configuração elasticsearch.yml <br>
-``cd elasticsearch-7.4.2
-vi config/elasticsearch.yml``
+``cd elasticsearch-7.4.2``
+``vi config/elasticsearch.yml``
 
 Os parametros que vamos alterar serão os seguintes (descomente tirando o "#" e coloque conforme abaixo):
 * cluster.name: crs-lab
