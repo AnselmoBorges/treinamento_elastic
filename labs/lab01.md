@@ -21,13 +21,13 @@ Adicione as entradas abaixo no arquivo /etc/security/limits.conf<br>
 ``ec2-user        hard nofile 65535``<br>
 ``ec2-user        soft nofile 65535``
 
-**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.
+**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.**
 
 ## Mudando o parametro de open files no /etc/sysctl.conf 
 Digite o comando "sudo vi /etc/sysctl.conf" e adicione a seguinte entrada no final do arquivo.<br>
 ``vm.max_map_count = 262144`` 
 
-**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.
+**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.**
 
 Efetive as mudanças rodando o comando abaixo:<br>
 ``sudo sysctl -p``
@@ -51,7 +51,7 @@ Os parametros que vamos alterar serão os seguintes (descomente tirando o "#" e 
 * discovery.seed_hosts: ["coloque seu IP prvado"]
 * cluster.initial_master_nodes: ["node01"]
 
-**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.
+**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.**
 
 Inicie o ElasticSearch:<br>
 ``bin/elasticsearch``
@@ -98,6 +98,8 @@ Vamos editar os seguintes parametros:<br>
 * server.host: "seupiprivado"
 * server.name: "kibana-srv"
 * elasticsearch.hosts: ["http://seuipprivado:9200"]
+
+**OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.**
 
 Iniciando os serviços do Kibana:<br>
 ``bin/kibana``
