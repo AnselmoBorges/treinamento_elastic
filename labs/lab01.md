@@ -14,11 +14,11 @@ Agora como já existe o Java 7 instalado por padrão vamos mudar para o java 8 c
 Vamos validar a versão do Java:<br>
 ``java -version``
 
-## Mudando os parametros de Hardlimt e softlimit de openfiles<br>
-Adicione as entradas abaixo no arquivo /etc/security/limits.conf
+## Mudando os parametros de Hardlimt e softlimit de openfiles
+Adicione as entradas abaixo no arquivo /etc/security/limits.conf<br>
 ``sudo vi /etc/security/limits.conf``
 
-``ec2-user        hard nofile 65535
+``ec2-user        hard nofile 65535<br>
 ec2-user        soft nofile 65535``
 
 **OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.
