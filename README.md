@@ -1,6 +1,6 @@
 # Conteudo do Treinamento do Stack Elastic
-'''Criado por:''' Anselmo Borges<br>
-'''Ultima atualização:''' 07.11.2019
+''Criado por:'' Anselmo Borges<br>
+''Ultima atualização:'' 07.11.2019
 
 Esse material faz parte do treinamento de ElasticSearch e outras tecnologias da Elastic
 
