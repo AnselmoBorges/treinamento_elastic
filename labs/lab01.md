@@ -109,4 +109,4 @@ Teste o acesso ao Kibana via navegador no endereço abaixo:<br>
 Entrando no Kibana rode o mesmo GET que foi rodado via CURL no devtools:<br>
 ``GET /``
 
-**OBS: Para executar pressione CTRL + ENTER
+# Fim de Laboratório
