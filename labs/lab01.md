@@ -60,23 +60,23 @@ Se deu tudo certo abra outra aba de conexão e rode o comando abaixo:<br>
 ``curl -X GET "seuipprivado:9200/?pretty"``
 
 o resultado deve ser parecido com esse:<br>
-``[ec2-user@ip-172-31-16-68 ~]$ curl -X GET "172.31.16.68:9200/?pretty"``<br>                                                        
-``{``<br>                                                                                                                            ``"name" : "node01",``<br>                                                                                                         
-  ``"cluster_name" : "crs-lab",``<br>                                                                                                
-  ``"cluster_uuid" : "MOMNcDfHSuqyFE_LwQoeEg",``<br>                                                                                 
-  ``"version" : {``<br>                                                                                                              
-    ``"number" : "7.4.2",``<br>                                                                                                      
-    ``"build_flavor" : "default",``<br>                                                                                              
-    ``"build_type" : "tar",``<br>                                                                                                    
-    ``"build_hash" : "2f90bbf7b93631e52bafb59b3b049cb44ec25e96",``<br>                                                               
-    ``"build_date" : "2019-10-28T20:40:44.881551Z",``<br>                                                                            
-    ``"build_snapshot" : false,``<br>                                                                                                
-    ``"lucene_version" : "8.2.0",``<br>                                                                                              
-    ``"minimum_wire_compatibility_version" : "6.8.0",``<br>                                                                          
-    ``"minimum_index_compatibility_version" : "6.0.0-beta1"``<br>                                                                    
-  ``},``<br>
-  ``"tagline" : "You Know, for Search"``<br>                                                                                         
-``}``<br>                                  
+``[ec2-user@ip-172-31-16-68 ~]$ curl -X GET "172.31.16.68:9200/?pretty"``
+``{``                                                                                                                            ``"name" : "node01",``                                                                                                         
+  ``"cluster_name" : "crs-lab",``                                                                                                
+  ``"cluster_uuid" : "MOMNcDfHSuqyFE_LwQoeEg",``                                                                                 
+  ``"version" : {``                                                                                                              
+    ``"number" : "7.4.2",``                                                                                                      
+    ``"build_flavor" : "default",``                                                                                              
+    ``"build_type" : "tar",``                                                                                                    
+    ``"build_hash" : "2f90bbf7b93631e52bafb59b3b049cb44ec25e96",``                                                               
+    ``"build_date" : "2019-10-28T20:40:44.881551Z",``                                                                            
+    ``"build_snapshot" : false,``                                                                                                
+    ``"lucene_version" : "8.2.0",``                                                                                              
+    ``"minimum_wire_compatibility_version" : "6.8.0",``                                                                          
+    ``"minimum_index_compatibility_version" : "6.0.0-beta1"``                                                                    
+  ``},``
+  ``"tagline" : "You Know, for Search"``                                                                                         
+``}``                                  
 
 Podemos fazer o mesmo teste via Navegador usando o endereço abaixo:<br>
 ``http://seupublicdns:9200``
