@@ -83,15 +83,15 @@ Podemos fazer o mesmo teste via Navegador usando o endereço abaixo:<br>
 
 ## Instalando o Kibana:
 Fazendo o download do Kibana:<br>
-``cd ~
-wget https://artifacts.elastic.co/downloads/kibana/kibana-7.4.2-linux-x86_64.tar.gz``
+``cd ~``<br>
+``wget https://artifacts.elastic.co/downloads/kibana/kibana-7.4.2-linux-x86_64.tar.gz``
 
 Descompacte o Kibana:<br>
 ``tar zfxv kibana-7.4.2-linux-x86_64.tar.gz``
 
 Vamos editar o arquivo de configuração do Kibana apontando para o nosso ElasticSearch:<br>
-``cd kibana-7.4.2-linux-x86_64
-vi config/kibana.yml``
+``cd kibana-7.4.2-linux-x86_64``<br>
+``vi config/kibana.yml``
 
 Vamos editar os seguintes parametros:<br>
 * server.host: "seupiprivado"
