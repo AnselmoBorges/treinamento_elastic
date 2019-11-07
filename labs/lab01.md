@@ -57,7 +57,7 @@ Os parametros que vamos alterar serão os seguintes (descomente tirando o "#" e 
 **OBS: Para salvar no vi ao invés de ESC digite CTRL+C e dê :wq normalmente.**
 
 Inicie o ElasticSearch:<br>
-``bin/elasticsearch``
+``bin/elasticsearch -d -p elastic.pid``
 
 Se deu tudo certo abra outra aba de conexão e rode o comando abaixo:<br>
 ``curl -X GET "seuipprivado:9200/?pretty"``
