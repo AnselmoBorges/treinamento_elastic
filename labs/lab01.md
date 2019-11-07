@@ -1,4 +1,7 @@
 # Laboratório 1 - Instalação do ElasticSearch e Kibana a partir do fonte:
+**Criado por:** Anselmo Borges
+**Ultima Atualização:** 07.11.2019
+
 Nesse laboratório iremos realizar as seguintes instalações:
 * Java 8
 * Elaticsearch 7.4
