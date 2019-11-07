@@ -5,4 +5,4 @@
 Esse material faz parte do treinamento de ElasticSearch e outras tecnologias da Elastic
 
 ## Laboratórios:
-* LAB 1 - Instalação e configuração do ElasticSearch e Kibana a partir do fonte
+* [LAB 1 - Instalação e configuração do ElasticSearch e Kibana a partir do fonte](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab01.md)
