@@ -18,36 +18,36 @@ Nesse laboratório iremos realizar algumas consultas no schema adega criado no l
 }
 
 
->! PUT /adega/_doc/11
-{​
-   "bebida": "Wisky",​
-   "marca": "Jack Daniel's",​
-   "estoque": 12,​
-   "valor": "109,90",​
-   "tipo": "Garrafa 750ml"​
+> PUT /adega/_doc/11
+{
+   "bebida": "Wisky",
+   "marca": "Jack Daniel's",
+   "estoque": 12,
+   "valor": "109,90",
+   "tipo": "Garrafa 750ml"
 }
 
->! PUT /adega/_doc/12
-{​
-   "bebida": "Wisky",​
-   "marca": "Johnny Walker Red label",​
-   "estoque": 8,​
-   "valor": "63,90",​
-   "tipo": "Garrafa 750ml"​
+> PUT /adega/_doc/12
+{
+   "bebida": "Wisky",
+   "marca": "Johnny Walker Red label",
+   "estoque": 8,
+   "valor": "63,90",
+   "tipo": "Garrafa 750ml"
 }
 
 4. Atualizar o campo preço do id 12 no modo completo para 73,30:
->! POST /adega/_doc/12
-{​
-   "bebida": "Wisky",​
-   "marca": "Johnny Walker Red label",​
-   "estoque": 8,​
-   "valor": "73,30",​
-   "tipo": "Garrafa 750ml"​
+> POST /adega/_doc/12
+{
+   "bebida": "Wisky",
+   "marca": "Johnny Walker Red label",
+   "estoque": 8,
+   "valor": "73,30",
+   "tipo": "Garrafa 750ml"
 }
 
 5. Deletando o documento de id 11.
->! DELETE /adega/_doc/11
+> DELETE /adega/_doc/11
 
 
 ## Desafio:
