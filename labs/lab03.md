@@ -80,7 +80,7 @@ Para acompanhar o andamento da importação dos logs use o comando abaixo:
 ## Adicionando os indices para vizualização no Kibana:
 Ná área de Management do Kibana vamos clicar em index patterns:<br>
 
-![Index Patterns](imagens/management_index.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/management_index.png)
 
 Feito isso clicamos no Icone azul de Create Index Patterns:<br>
 ![Index Patterns](imagens/create_index_patterns.png)
