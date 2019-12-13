@@ -83,29 +83,29 @@ Ná área de Management do Kibana vamos clicar em index patterns:<br>
 ![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/management_index.png)
 
 Feito isso clicamos no Icone azul de Create Index Patterns:<br>
-![Index Patterns](imagens/create_index_patterns.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/create_index_patterns.png)
 
 Escreva logs_server*, aparecerão os 3 indices criados pelo filebeats, clique em next step.<br>
-![Index Patterns](imagens/include_index.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/include_index.png)
 
 Em Time filter field, escolha @timestamp e clique em create:
-![Index Patterns](imagens/time_field.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/time_field.png)
 
 ## Criando uma visualização desses indices no Kibana:
 Vamos agora criar uma visualização simples desses logs no Kibana, clicamos na barra lateral Visualize eclicamos em create new visualization.<br>
-![Index Patterns](imagens/visualize.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/visualize.png)
 
 Vamos escolher o tipo Data Table de visualização:<br>
-![Index Patterns](imagens/datatable.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/datatable.png)
 
 Escolheremos como datasource log_server*:<br>
-![Index Patterns](imagens/datasource.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/datasource.png)
 
 Agora na tela de construção da visualização vamos em Buckets, Split Rows, em agregação vamos pra Terms, em fields vamos em originalUrl.keyword, em Custom Label coloque "5 Posts mais acessados do Blog" e clicamos no Play la em cima:<br>
-![Index Patterns](imagens/visu_index.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/visu_index.png)
 
 Após o play não vai ser exibido nada, isso é porque os dados são de 3 anos atras, modifique o filtro para last 3 years (na imagem está 2 mais coloque 3): <br>
-![Index Patterns](imagens/filter.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/filter.png)
 
 Agora Salvamos a visualização:<br>
-![Index Patterns](imagens/save.png)
+![Index Patterns](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/imagens/save.png)
