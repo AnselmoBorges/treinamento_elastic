@@ -120,11 +120,11 @@ Qual seria?
 
 Vamos começar a usar o bool agora, nesse caso eu quero que ele busque por "improvements", "performance" e "optimizations" em content.
 
-> GET blogs/_search
+> GET blogs/_search 
 {
   "query": {
     "bool": {
-      "should": [
+      "must": [
         {
           "match": {
             "content": "performance"
@@ -140,7 +140,7 @@ Vamos começar a usar o bool agora, nesse caso eu quero que ele busque por "impr
             "content": "improvements"
           }
         }
-      ]
+        ]
     }
   }
 }
@@ -148,11 +148,11 @@ Vamos começar a usar o bool agora, nesse caso eu quero que ele busque por "impr
 ## Alterando o Ranking na busca booleana:
 Quero que ele melhore o ranking dos que forem encontrados com "improvements" em "content".
 
-> GET blogs/_search
+> GET blogs/_search 
 {
-  "query": {
+  "query" : {
     "bool": {
-      "should": [
+      "must": [
         {
           "match": {
             "content": "performance"
@@ -162,9 +162,11 @@ Quero que ele melhore o ranking dos que forem encontrados com "improvements" em 
           "match": {
             "content": "optimizations"
           }
-        },
+        }
+      ],
+      "should": [
         {
-          "should": {
+          "match" : {
             "content": "improvements"
           }
         }
@@ -173,26 +175,30 @@ Quero que ele melhore o ranking dos que forem encontrados com "improvements" em 
   }
 }
 
-
 ## Usando o must_not
 Quero que na mesma consulta eu não traga os itens com "optimizations" no "title"
-> GET blogs/_search
+> 
+GET blogs/_search 
 {
-  "query": {
+  "query" : {
     "bool": {
-      "should": [
+      "must": [
         {
           "match": {
             "content": "performance"
           }
-        },
+        }
+      ],
+      "must_not": [
         {
           "match": {
-            "content": "optimizations"
+            "title": "optimizations"
           }
-        },
+        }
+      ], 
+      "should": [
         {
-          "should": {
+          "match" : {
             "content": "improvements"
           }
         }
