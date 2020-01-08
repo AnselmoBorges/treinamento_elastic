@@ -9,4 +9,4 @@ Esse material faz parte do treinamento de ElasticSearch e outras tecnologias da 
 * [LAB 2 - Manipulando dados no Elasticsearch](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab02.md)
 * [LAB 3 - Buscas no Elasticsearch](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab03.md)
 * [LAB 4 - Refinando consultas](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab04.md)
-* [LAB 4 - Agregações](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab05.md)
+* [LAB 5 - Agregações](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab05.md)
