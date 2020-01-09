@@ -113,16 +113,57 @@ dos 6 valores status_code?
       <summary>Resposta</summary>
         <!-- language: lang-json -->
             
-            GET logs_server*/_search
-                 {
-                   "size": 0,
-                   "aggs": {
-                     "status_code_buckets": {
-                       "terms": {
-                         "field": "status_code"
-                       }
-                     }
+        GET logs_server*/_search
+             {
+               "size": 0,
+               "aggs": {
+                 "status_code_buckets": {
+                   "terms": {
+                     "field" : "status_code"
                    }
                  }
+               }
+             }
     </details>
-    
+
+7. Uma agregação de termos é classificada por doc_count por padrão. Modifique sua pesquisa anterior para que seus termos sejam classificados em ordem alfabética.
+    <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+            
+        GET logs_server*/_search
+        {
+          "size": 0,
+          "aggs": {
+            "status_code_buckets": {
+              "terms": {
+                "field": "status_code",
+                "order": {
+                  "_key": "asc"
+                }
+              }
+            }
+          }
+        }
+    </details>
+
+8. Quantos logs foram gerados por semana?
+    <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+            
+        GET logs_server*/_search
+        {
+          "size": 0,
+          "aggs": {
+            "logs_by_week": {
+              "date_histogram": {
+                "field": "@timestamp",
+                "interval": "week"
+              }
+            }
+          }
+        }
+    </details>
+
+  ## Fim de laboratório

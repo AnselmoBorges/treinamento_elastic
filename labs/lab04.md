@@ -1,6 +1,6 @@
 # Laboratório 4 - Refinando consultas
 **Criado por:** Anselmo Borges<br>
-**Ultima Atualização:** 27.12.2019
+**Ultima Atualização:** 09.02.2020
 
 Nesse laboratório iremos realizar algumas consultas no schema blogs criado no lab anterior:
 
@@ -9,112 +9,147 @@ Como dito no capitulo, realizamos as consultas e cada documento tem um peso de s
 * Max Score
 * Score de cada documento.
 
-> GET blogs/_search
- {
-  "query": {
-    "match": {
-      "content": "elastic"
-    }
-  }
-}
+    <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+            
+        GET blogs/_search
+         {
+          "query": {
+            "match": {
+              "content": "elastic"
+            }
+          }
+        }
+
+    </details>
 
 ## Mudando a forma de consulta do match de or para and:
 Conforme o capitulo informa, quando fazemos uma consulta com  match e usamos mais de uma palavra, por exemplo, "quero cerveja" ele usa por padrão o "or" que busca ou "quero" ou "cerveja", para mudar isso precisamos mudar o operador.
 
 Faça uma busca onde no titulo teremos "elastic stack" e no resultado venham documentos com "elastic" e "stack"
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
 
-> GET blogs/_search
-{
-  "query": {
-    "match": {
-      "title": {
-        "query": "elastic stack",
-        "operator": "and"
-      }
-    }
-  }
-}
+        GET blogs/_search
+        {
+          "query": {
+            "match": {
+              "title": {
+                "query": "elastic stack",
+                "operator": "and"
+              }
+            }
+          }
+        }
+  </details>
 
 ## Usando o Slop com frases:
 Vamos usar essa mesma busca, utilizando slop ao invés do operador para uma palavra apenas. Busque pela frase "elastic stack" no titulo.
 
-> GET blogs/_search
-{
-  "query": {
-    "match_phrase": {
-      "title": {
-        "query": "elastic stack",
-        "slop": 1
-      }
-    }
-  }
-}
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+
+        GET blogs/_search
+        {
+          "query": {
+            "match_phrase": {
+              "title": {
+                "query": "elastic stack",
+                "slop": 1
+              }
+            }
+          }
+        }
+  </details>
 
 ## Realize uma busca de uma string em vários campos:
 Vamos realizar uma busca da palavra "open" em mais de uma campo, no nosso caso, os campos title e content:
 
-> GET blogs/_search
-{
-  "query": {
-    "multi_match": {
-      "query": "open",
-      "fields": [
-        "title",
-        "content"
-      ]
-    }
-  }
-}
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+
+        GET blogs/_search
+        {
+          "query": {
+            "multi_match": {
+              "query": "open",
+              "fields": [
+                "title",
+                "content"
+              ]
+            }
+          }
+        }
+  </details>
 
 ## Buscando em vários campos uma frase:
 Vamos alterar a query anterior buscando pela frase "open source".
 
-> GET blogs/_search
-{
-  "query": {
-    "multi_match": {
-      "query": "open source",
-      "fields": [
-        "title",
-        "content"
-      ],
-      "type" : "phrase"
-    }
-  }
-}
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+
+        GET blogs/_search
+        {
+          "query": {
+            "multi_match": {
+              "query": "open source",
+              "fields": [
+                "title",
+                "content"
+              ],
+              "type" : "phrase"
+            }
+          }
+        }
+  </details>
 
 ## Potencializando a busca em um campo especifico.
 Suponhamos que nessa mesma consulta eu precise que os documentos que forem encontrados em "title" venham primeiro na ordem de score:
 
-GET blogs/_search
-{
-  "query": {
-    "multi_match": {
-      "query": "open source",
-      "fields": [
-        "title^2",
-        "content"
-      ],
-      "type" : "phrase"
-    }
-  }
-}
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+
+        GET blogs/_search
+        {
+          "query": {
+            "multi_match": {
+              "query": "open source",
+              "fields": [
+                "title^2",
+                "content"
+              ],
+              "type" : "phrase"
+            }
+          }
+        }
+  </details>
 
 ## Usando a substituição:
-Suponhamos que eu tenha digitado a busca errada em alguns caracteres, por exemplo, "oven saurce" e estou querendo buscar por "open source" porem, eu tenho um metodo de não setar numeros e o fuzziness se virar automaticamente.
-Qual seria?
-> GET blogs/_search
-{
-  "_source": "title",
-  "query": {
-    "match": {
-      "title": {
-        "query" : "oven sauce",
-        "fuzziness": "auto"
-      }
-    }
-  }
-}
+Suponhamos que eu tenha digitado a busca errada em alguns caracteres, por exemplo, "oven saurce" e estou querendo buscar por "open source" porem, eu tenho um metodo de não setar numeros e o fuzziness se virar automaticamente. Qual seria?
+
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+
+        GET blogs/_search
+        {
+          "_source": "title",
+          "query": {
+            "match": {
+              "title": {
+                "query" : "oven sauce",
+                "fuzziness": "auto"
+              }
+            }
+          }
+        }
+  </details>
 
 ## Usando o bool para busca de mais de um valor em mais de um campo:
 
