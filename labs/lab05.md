@@ -166,4 +166,31 @@ dos 6 valores status_code?
         }
     </details>
 
-  ## Fim de laboratório
+## Combinando agregações com buckets e metricas:
+9. Pegue a soma de bytes de response_size por dia.
+    <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+            
+        GET logs_server*/_search
+        {
+          "size": 0,
+          "aggs": {
+            "requisições_por_dia": {
+              "date_histogram": {
+                "field": "@timestamp",
+                "interval": "day" 
+              },
+          "aggs": {
+            "soma_bytes": {
+              "sum": {
+                "field": "response_size"
+              }
+            }
+          }
+            }
+          }
+        }
+    </details>
+
+## Fim de laboratório
