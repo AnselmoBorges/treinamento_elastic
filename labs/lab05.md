@@ -1,6 +1,6 @@
-# Laboratório 3 - Realizando Consultas
+# Laboratório 5 - Realizando Consultas de Metricas e Agregação
 **Criado por:** Anselmo Borges <br>
-**Ultima Atualização:** 08.01.2020
+**Ultima Atualização:** 11.02.2020
 
 Nesse laboratório iremos realizar algumas agregações conforme os capítulos 8, 9 e 10.
 
