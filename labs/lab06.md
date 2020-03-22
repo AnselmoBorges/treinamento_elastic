@@ -129,4 +129,82 @@ Agora com o repositório configurado instalamos o Kibana somente no primeiro nod
     elliot01 "sudo yum install kibana -y"
     
 ## Configuração do parâmetros do Cluster e finalização:
-Agora que temos o tudo instalado, vamos configurar os parâmetros pra que os nodes se comuniquem e virem um cluster.
+Agora que temos o tudo instalado, vamos configurar os parâmetros pra que os nodes se comuniquem e virem um cluster de fato. Abaixo seguem os parâmetros que devemos alterar no arquivo /etc/elasticsearch/elasticsearch.yml
+
+- **cluster.name:** Colocamos o nome do Cluster, vou chamar de crs_anselmo
+- **node.name:** Colocamos o nome do node, por exemplo no node 1, elliot01
+- **discovery.seed_hosts:** Aqui colocamos a lista dos hosts que farão parte do cluster, por exemplo ["server1", "server2", "server3"]
+- **cluster.initial_master_nodes:** Aqui colocamos os nodes que subirão inicialmente como Master ["node1", "node2", "node3"]
+
+**OBS: O node name é diferente do hostname, mas eu costumo configurar tudo com o mesmo nome, o node1 por exemplo, vai ter o mesmo nome do host ou seja nodename = elliot01**
+
+Sendo assim vamos configurar dessa forma:
+
+    cluster.name: crs_anselmo
+    node.name: elliot0? #Mudar de acordo com o host
+    network.host: _site_
+    discovery.seed_hosts: ["elliot01", "elliot02", "elliot03"]
+    cluster.initial_master_nodes: ["elliot01", "elliot02", "elliot03"]
+    
+Sendo assim vamos editar o arquivo em cada um dos hosts:
+ 
+* Elliot01 *
+ 
+    elliot01
+    sudo vim /etc/elasticsearch/elasticsearch.yml
+    (editar conteudo, salvar e sair)
+    
+* Elliot02 *
+ 
+    elliot02
+    sudo vim /etc/elasticsearch/elasticsearch.yml
+    (editar conteudo, salvar e sair)
+
+* Elliot03 *
+ 
+    elliot03
+    sudo vim /etc/elasticsearch/elasticsearch.yml
+    (editar conteudo, salvar e sair)
+
+## Habilitando o Daemon e reiniciando o serviço:
+Após editado, reiniciamos o serviço nos 3 nodes:
+
+    elliot01 "sudo systemctl enable elasticsearch; sudo systemctl restart elasticsearch"
+    elliot02 "sudo systemctl enable elasticsearch; sudo systemctl restart elasticsearch"
+    elliot03 "sudo systemctl enable elasticsearch; sudo systemctl restart elasticsearch"
+    
+## Configurando o Kibana para apontar para ElasticSearch:
+No Kibana eu configuro 3 parâmetros:
+- **server.host:** Coloco o host onde esse cara vai rodar, no meu caso que é o node1 será elliot01
+- **server.name:** Geralmente tambem coloco o nome do host, no meu caso que é o node1 será elliot01
+- **elasticsearch.hosts:** Aqui coloco o caminho para me conectar ao Elasticsearch, qualquer um dos hosts, no meu caso vou usar [http://elliot01:9200]
+
+Então logamos no elliot01 e rodamos o comando abaixo:
+
+    elliot01
+    sudo su - 
+    vim /etc/kibana/kibana.yml
+    (Encontre os parâmetros, edite, salve e saia)
+    
+## Reiniciando e habilitando o Kibana:
+Agora com o arquivo configurado, vamos reiniciar e habilitar o serviço do Kibana com o comando baixo:
+
+    elliot01 "sudo systemctl enable kibana; sudo systemctl restart kibana"
+    
+## Liberando regras do firewall:
+Para que você tenha acesso aos servidores da sua máquina, você vai precisar liberar o firewall nas portas 5601 (Kibana) e 9200 (Elasticsearch). O video dessa parte explica como fazer isso.
+
+## Testando os acesso:
+Vamos validar o funcionamento via navegador tentando acessar os 2 endereços abaixo:
+
+Elasticsearch 
+    
+    http://elliot01.anselmo.com:9200
+    
+Kibana
+
+    http://elliot01.anselmo.com:5601
+    
+    
+## Video da configuração do Elasticsearch como cluster:
+segue o link abaixo com um video explicativo da configuração do Elasticsearch como cluster.
