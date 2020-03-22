@@ -1,6 +1,6 @@
 # Conteudo do Treinamento do Stack Elastic
 **Criado por:** Anselmo Borges<br>
-**Ultima atualização:** 09.12.2019
+**Ultima atualização:** 22.03.2019
 
 Esse material faz parte do treinamento de ElasticSearch e outras tecnologias da Elastic
 
@@ -10,3 +10,4 @@ Esse material faz parte do treinamento de ElasticSearch e outras tecnologias da 
 * [LAB 3 - Buscas no Elasticsearch](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab03.md)
 * [LAB 4 - Refinando consultas](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab04.md)
 * [LAB 5 - Agregações](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab05.md)
+* [LAB 6 - Cluster Elasticsearch](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab06.md)
