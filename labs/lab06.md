@@ -10,9 +10,9 @@ Os nomes dos servidores serão:
 - elliot03
 
 ## Hosts Cluster Elasticsearch:
-10.128.0.7      elliot01    elliot01.anselmo.com
-10.128.0.6      elliot02    elliot02.anselmo.com
-10.128.0.5      elliot03    elliot03.anselmo.com
+    10.128.0.7      elliot01    elliot01.anselmo.com
+    10.128.0.6      elliot02    elliot02.anselmo.com
+    10.128.0.5      elliot03    elliot03.anselmo.com
 
 ## Criando Alias para cada um dos nodes
 alias elliot01="ssh Anselmo@elliot01"
