@@ -128,6 +128,11 @@ Agora com o repositório configurado instalamos o Kibana somente no primeiro nod
 
     elliot01 "sudo yum install kibana -y"
     
+## Video da instalação dos pacotes:
+Segue abaixo o link do vídeo com a instalação dos pacotes:
+
+[Instalando pre-requisitos e pacotes](https://drive.google.com/file/d/1atl7CfsbcR1jDdymlRtAE6na_RQ7UIhn/view?usp=sharing)
+    
 ## Configuração do parâmetros do Cluster e finalização:
 Agora que temos o tudo instalado, vamos configurar os parâmetros pra que os nodes se comuniquem e virem um cluster de fato. Abaixo seguem os parâmetros que devemos alterar no arquivo /etc/elasticsearch/elasticsearch.yml
 
