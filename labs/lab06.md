@@ -9,7 +9,7 @@ Os nomes dos servidores serão:
 - elliot02
 - elliot03
 
-![Criando infra GCP](https://drive.google.com/file/d/1eVMvi4nLvAdMr5QKbedZps6fOIekk_oL/view?usp=sharing)
+[Criando infra GCP](https://drive.google.com/file/d/1eVMvi4nLvAdMr5QKbedZps6fOIekk_oL/view?usp=sharing)
 
 *OBS: Todo esse material foi montando partindo do principio que a maquina origem (a minha) é um linux ou um Mac, para Windows algumas coisas deverão ser adaptadas. E eu estou falando da estação de trabalho não dos servidores, o dia que eu instalar um Cluster no Windows eu paro de trabalhar*
 
