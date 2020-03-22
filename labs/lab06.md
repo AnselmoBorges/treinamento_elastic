@@ -66,7 +66,7 @@ Como já dito anteriormente o Java 8 é pré requisito para o funcionamento do E
     elliot03 "sudo yum install java-1.8.0-openjdk.x86_64 -y"
 
 ## Configurando o repositório do Elasticseach para os nodes:
-Colar o conteudo abaixo no caminho /etc/yum.repos.d criando um arquivo de nome elasticsearc.repo em cada um dos nodes:
+Colar o conteudo abaixo no caminho /etc/yum.repos.d criando um arquivo de nome elasticsearch.repo em cada um dos nodes:
 
     [elasticsearch]
     name=Elasticsearch repository for 7.x packages
