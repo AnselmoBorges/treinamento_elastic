@@ -80,19 +80,50 @@ Colar o conteudo abaixo no caminho /etc/yum.repos.d criando um arquivo de nome e
 Sendo assim entre nos servidores e faça a edição:
 
     elliot01 
-    sudo vi /etc/yum.repo.d/elasticsearch.repo
+    sudo vi /etc/yum.repos.d/elasticsearch.repo
     (cole o conteúdo e salve)
     exit
 
     elliot02 
-    sudo vi /etc/yum.repo.d/elasticsearch.repo
+    sudo vi /etc/yum.repos.d/elasticsearch.repo
     (cole o conteúdo e salve)
     exit
 
     elliot03 
-    sudo vi /etc/yum.repo.d/elasticsearch.repo
+    sudo vi /etc/yum.repos.d/elasticsearch.repo
     (cole o conteúdo e salve)
     exit
 
 ## Instalação dos pacotes RPM:
-Agora com os repositórios configurados vamos realizar a instalação dos pacotes do Elasticsearch
+Agora com os repositórios configurados vamos realizar a instalação dos pacotes do Elasticsearch nos 3 nodes:
+
+    elliot01 "sudo yum install elasticsearch -y"
+    elliot02 "sudo yum install elasticsearch -y"
+    elliot03 "sudo yum install elasticsearch -y"
+
+## Configuração do Kibana:
+Somente no node 1 nós vamos configurar o repositorio do Kibana no /etc/yum.repos.d criando um arquivo kibana.repo colando o conteúdo abaixo:
+
+    [kibana-7.x]
+    name=Kibana repository for 7.x packages
+    baseurl=https://artifacts.elastic.co/packages/7.x/yum
+    gpgcheck=1
+    gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    enabled=1
+    autorefresh=1
+    type=rpm-md
+
+Cole o conteudo:
+
+    elliot01 
+    sudo vi /etc/yum.repos.d/kibana.repo
+    (cole o conteúdo e salve)
+    exit
+
+## Instale o Kibana:
+Agora com o repositório configurado instalamos o Kibana somente no primeiro node:
+
+    elliot01 "sudo yum install kibana -y"
+    
+## Configuração do parâmetros do Cluster e finalização:
+Agora que temos o tudo instalado, vamos configurar os parâmetros pra que os nodes se comuniquem e virem um cluster.
