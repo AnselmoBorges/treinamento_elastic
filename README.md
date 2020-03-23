@@ -11,3 +11,6 @@ Esse material faz parte do treinamento de ElasticSearch e outras tecnologias da 
 * [LAB 4 - Refinando consultas](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab04.md)
 * [LAB 5 - Agregações](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab05.md)
 * [LAB 6 - Cluster Elasticsearch](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab06.md)
+* [LAB 7 - Ativando Autenticação e TLS](https://github.com/AnselmoBorges/treinamento_elastic/blob/master/labs/lab07.md)
+
+
