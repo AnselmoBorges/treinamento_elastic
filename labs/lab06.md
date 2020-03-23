@@ -153,19 +153,19 @@ Sendo assim vamos configurar dessa forma:
     
 Sendo assim vamos editar o arquivo em cada um dos hosts:
  
-* Elliot01 *
+*Elliot01*
  
     elliot01
     sudo vim /etc/elasticsearch/elasticsearch.yml
     (editar conteudo, salvar e sair)
     
-* Elliot02 *
+*Elliot02*
  
     elliot02
     sudo vim /etc/elasticsearch/elasticsearch.yml
     (editar conteudo, salvar e sair)
 
-* Elliot03 *
+*Elliot03*
  
     elliot03
     sudo vim /etc/elasticsearch/elasticsearch.yml
