@@ -1,4 +1,4 @@
-# Laboratório do Capítulo 13 - Cluster ElasticSearch
+# Lab 6 - Cluster ElasticSearch
 Nesse capítulo vamos realizar a instalaçao de um cluster Elasticsearch, no meu exemplo vou usar o Google GCP, mas você pode fazer com, maquinas virtuais, Amazon, Azure, como achar melhor.
 Tanto a Amazon, como Azure e GCP disponibilizam de um periodo de testes grátis onde você pode criar a sua infra sem custo, sendo assim basta criar uma conta em um desses provedores cloud e criar sua infraestrutura.
 
