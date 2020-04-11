@@ -191,6 +191,7 @@ Quero que ele melhore o ranking dos que forem encontrados com "improvements" em 
    <details>
       <summary>Resposta</summary>
         <!-- language: lang-json -->
+        
         GET blogs/_search 
         {
           "query" : {
@@ -221,32 +222,38 @@ Quero que ele melhore o ranking dos que forem encontrados com "improvements" em 
 
 ## Usando o must_not
 Quero que na mesma consulta eu não traga os itens com "optimizations" no "title"
-> 
-GET blogs/_search 
-{
-  "query" : {
-    "bool": {
-      "must": [
+
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+        
+        GET blogs/_search 
         {
-          "match": {
-            "content": "performance"
+          "query" : {
+            "bool": {
+              "must": [
+                {
+                  "match": {
+                    "content": "performance"
+                  }
+                }
+              ],
+              "must_not": [
+                {
+                  "match": {
+                    "title": "optimizations"
+                  }
+                }
+              ], 
+              "should": [
+                {
+                  "match" : {
+                    "content": "improvements"
+                  }
+                }
+              ]
+            }
           }
         }
-      ],
-      "must_not": [
-        {
-          "match": {
-            "title": "optimizations"
-          }
-        }
-      ], 
-      "should": [
-        {
-          "match" : {
-            "content": "improvements"
-          }
-        }
-      ]
-    }
-  }
-}
+  </details>
+
