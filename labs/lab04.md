@@ -158,6 +158,7 @@ Vamos começar a usar o bool agora, nesse caso eu quero que ele busque por "impr
    <details>
       <summary>Resposta</summary>
         <!-- language: lang-json -->
+
         GET blogs/_search 
         {
           "query": {
