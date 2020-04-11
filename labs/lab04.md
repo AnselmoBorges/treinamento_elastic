@@ -155,60 +155,68 @@ Suponhamos que eu tenha digitado a busca errada em alguns caracteres, por exempl
 
 Vamos começar a usar o bool agora, nesse caso eu quero que ele busque por "improvements", "performance" e "optimizations" em content.
 
-> GET blogs/_search 
-{
-  "query": {
-    "bool": {
-      "must": [
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+        GET blogs/_search 
         {
-          "match": {
-            "content": "performance"
-          }
-        },
-        {
-          "match": {
-            "content": "optimizations"
-          }
-        },
-        {
-          "match": {
-            "content": "improvements"
+          "query": {
+            "bool": {
+              "must": [
+                {
+                  "match": {
+                    "content": "performance"
+                  }
+                },
+                {
+                  "match": {
+                    "content": "optimizations"
+                  }
+                },
+                {
+                  "match": {
+                    "content": "improvements"
+                  }
+                }
+                ]
+            }
           }
         }
-        ]
-    }
-  }
-}
+  </details>
 
 ## Alterando o Ranking na busca booleana:
 Quero que ele melhore o ranking dos que forem encontrados com "improvements" em "content".
 
-> GET blogs/_search 
-{
-  "query" : {
-    "bool": {
-      "must": [
+   <details>
+      <summary>Resposta</summary>
+        <!-- language: lang-json -->
+        GET blogs/_search 
         {
-          "match": {
-            "content": "performance"
-          }
-        },
-        {
-          "match": {
-            "content": "optimizations"
+          "query" : {
+            "bool": {
+              "must": [
+                {
+                  "match": {
+                    "content": "performance"
+                  }
+                },
+                {
+                  "match": {
+                    "content": "optimizations"
+                  }
+                }
+              ],
+              "should": [
+                {
+                  "match" : {
+                    "content": "improvements"
+                  }
+                }
+              ]
+            }
           }
         }
-      ],
-      "should": [
-        {
-          "match" : {
-            "content": "improvements"
-          }
-        }
-      ]
-    }
-  }
-}
+  </details>
 
 ## Usando o must_not
 Quero que na mesma consulta eu não traga os itens com "optimizations" no "title"
